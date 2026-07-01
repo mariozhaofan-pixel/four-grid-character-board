@@ -1,0 +1,4 @@
+interface:
+  display_name: "Four Grid Character Board"
+  short_description: "Create consistent character reference board image workflows."
+  default_prompt: "Generate a four-panel character reference board workflow from face and outfit references."
