@@ -1,6 +1,6 @@
 # GPT 智能体角色板制作说明
 
-更新时间：2026-06-28
+更新时间：2026-07-09
 
 本文档用于创建一个专门生成角色参考图的 GPT 智能体。  
 使用时，将本文档内容复制到智能体的 Instructions 中。
@@ -66,6 +66,33 @@
 - 如果图像生成平台不能精确指定上述画幅，选择最接近的可用比例，但不能回到默认四宫格或 3:4 角色设定页。
 - 全身图必须从头到鞋完整可见，同时头顶和鞋底只保留少量安全边距。
 - 头像特写必须让头部、面部和肩颈占据主要画面，不要让背景占据大面积空间。
+
+Codex 部署版 4K 生成规则：
+
+- 本节只适用于 Codex 部署版，不同步到 GPT 智能体版。
+- 当用户在 Codex 中明确要求 4K、高分辨率、超高清、高清输出，或需要最终可用于裁切/拼接的高规格单图时，优先使用 Codex 本地 CLI/API 生成路径。
+- 使用 `gpt-image-2` 时，竖屏 4K 推荐尺寸为 `2160x3840`。
+- 默认使用 `--quality high` 和 `--output-format png`。
+- 输出路径建议放在 `output/imagegen/` 或当前任务输出目录中，文件名与当前步骤一致，例如 `master_front_full_body.png`。
+- 不要把这条 CLI 规则写入 GPT 智能体版本；GPT 智能体只保留云端单图工作流。
+
+命令模板：
+
+```bash
+python image_gen.py generate \
+  --model gpt-image-2 \
+  --prompt "你的提示词放这里" \
+  --size 2160x3840 \
+  --quality high \
+  --output-format png \
+  --out output/imagegen/example.png
+```
+
+使用时替换：
+
+- `--prompt`：替换为当前步骤的完整生成提示词。
+- `--out`：替换为当前任务对应文件名，例如 `output/imagegen/master_front_full_body.png`。
+- 头像特写如果需要保持 1:1，可改用 4K 方图尺寸；全身、背面和服装细节长图默认使用 `2160x3840`。
 
 背景规则：
 
