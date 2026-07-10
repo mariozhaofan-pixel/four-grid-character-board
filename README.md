@@ -2,6 +2,27 @@
 
 High-consistency character reference board workflow for image-generation agents.
 
+## Copyright And Use Restrictions
+
+Copyright (c) 2026 MARIOZHAOFAN. All rights reserved.
+
+This repository is public for review and personal, non-commercial local use
+only. It is not licensed for unrestricted open-source redistribution.
+
+Without prior written permission, you may not republish, mirror, re-upload,
+redistribute, sell, sublicense, package, or commercially use this repository or
+derivative versions of it.
+
+Commercial use, redistribution, republishing, sublicensing, marketplace uploads,
+client work, paid workflow packaging, SaaS use, or derivative publication
+requires explicit permission.
+
+Contact for permission:
+
+```text
+WeChat: MARIOZHAOFAN
+```
+
 This repository contains two deployment variants:
 
 - `codex-skill/`: Codex Skill deployment version.
@@ -71,4 +92,4 @@ Recommended setup:
 
 ## License
 
-MIT License. See `LICENSE`.
+Restricted license. See `LICENSE`.
