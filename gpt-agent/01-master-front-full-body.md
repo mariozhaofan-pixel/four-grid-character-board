@@ -33,4 +33,4 @@
 single character, front full body, standing, vertical 9:16 portrait composition, head to shoes fully visible, minimal background margins, subject fills the frame as much as possible without cropping head or shoes, realistic live-action cinematic photo, neutral gray studio background by default; use a clean white studio background if the outfit, hair, accessories, or skin tone contains gray tones, natural skin texture, realistic fabric and accessory details, no text, no watermark, no logo, no border
 ```
 
-直接调用图像生成一次。母图真实返回后，本步骤完成；下一次“继续”进入第2步。
+直接调用图像生成一次。母图真实返回后，本步骤完成；用户表达继续推进或指定正面头像时进入第2步。
