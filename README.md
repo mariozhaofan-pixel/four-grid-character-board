@@ -91,10 +91,11 @@ gpt-agent/验收.md
 
 Recommended setup:
 
-1. Paste `gpt-agent/instructions.md` into the GPT Instructions field.
-2. Upload the five Chinese Markdown files as GPT knowledge references.
-3. Enable Image Generation and image upload / vision capabilities.
-4. Keep Code Interpreter & Data Analysis disabled for this GPT unless you separately need it. This workflow should return rendered images, not sandbox file paths.
+1. Name the GPT `角色板单图制作助手` to avoid implying that it should compose a grid.
+2. Paste `gpt-agent/instructions.md` into the GPT Instructions field.
+3. Upload the five Chinese Markdown files as GPT knowledge references.
+4. Enable Image Generation and image upload / vision capabilities.
+5. Keep Code Interpreter & Data Analysis disabled for this GPT unless you separately need it. This workflow should return rendered images, not sandbox file paths.
 
 The Instructions file owns behavior, semantic routing, and direct image-generation calls. The five knowledge files contain only visual reference material, avoiding filename-based tool routing and text fallback behavior.
 
