@@ -14,7 +14,7 @@ For the full production specification, read `references/production-rules.md` bef
 ## Output Variants
 
 - **Codex deployment version**: Use this skill folder directly in Codex. Follow `SKILL.md` plus `references/production-rules.md`.
-- **GPT agent version**: Use `gpt-agent/four-grid-character-board-creation.md` from the repository as the GPT Instructions or knowledge file.
+- **GPT agent version**: Use `gpt-agent/instructions.md` as the Chinese state router and upload the four ordered generation files plus the validation file in `gpt-agent/` as knowledge files.
 
 ## Default Workflow
 

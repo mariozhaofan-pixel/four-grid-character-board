@@ -34,8 +34,9 @@ The workflow is designed for single-character reference sets:
 2. Generate a front portrait from the master.
 3. Generate a three-quarter portrait from the master.
 4. Generate a back full-outfit view from the master.
-5. Crop or generate a front outfit-detail view.
-6. Let the user assemble the final 2x2 board.
+5. Let the user assemble the final 2x2 board.
+
+The GPT agent version uses this fixed four-image sequence. The Codex deployment may additionally crop or generate a front outfit-detail view when explicitly requested.
 
 ## Key Defaults
 
@@ -43,7 +44,7 @@ The workflow is designed for single-character reference sets:
 - One generated image per step.
 - User reference images are inputs only, never outputs.
 - Head close-ups use `1:1`.
-- Master, full-body, and outfit-detail long views use vertical `9:16`.
+- Master and full-body views use vertical `9:16`; head close-ups use `1:1`.
 - Neutral gray studio background by default.
 - Switch to white studio background when the subject has gray-toned outfit, hair, accessories, or skin.
 - No text, labels, watermarks, logos, borders, model sheets, or 2x2 grid generation by default.
@@ -81,14 +82,20 @@ Use these files when configuring a GPT agent:
 
 ```text
 gpt-agent/instructions.md
-gpt-agent/four-grid-character-board-creation.md
+gpt-agent/01-master-front-full-body.md
+gpt-agent/02-front-portrait.md
+gpt-agent/03-three-quarter-portrait.md
+gpt-agent/04-back-full-outfit.md
+gpt-agent/05-validation-and-recovery.md
 ```
 
 Recommended setup:
 
 1. Paste `gpt-agent/instructions.md` into the GPT Instructions field.
-2. Upload `gpt-agent/four-grid-character-board-creation.md` as a knowledge file, or paste it after the Instructions if your GPT setup does not support files.
+2. Upload the five numbered Markdown files as GPT knowledge files. Keep their filenames unchanged so `instructions.md` can route to one generation step at a time.
 3. Enable image generation and image upload / vision capabilities.
+
+The Instructions file is a lightweight Chinese state router. Files `01` through `04` are self-contained prompts for the fixed generation sequence; file `05` is loaded only for validation, recovery, or final output.
 
 ## License
 
