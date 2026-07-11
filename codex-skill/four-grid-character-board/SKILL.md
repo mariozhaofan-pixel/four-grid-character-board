@@ -14,7 +14,7 @@ For the full production specification, read `references/production-rules.md` bef
 ## Output Variants
 
 - **Codex deployment version**: Use this skill folder directly in Codex. Follow `SKILL.md` plus `references/production-rules.md`.
-- **GPT agent version**: Use `gpt-agent/instructions.md` as the Chinese state router and upload the four ordered generation files plus the validation file in `gpt-agent/` as knowledge files.
+- **GPT agent version**: Use `gpt-agent/instructions.md` for behavior and semantic routing; upload the four Chinese view references plus the validation reference in `gpt-agent/` as knowledge files.
 
 ## Default Workflow
 

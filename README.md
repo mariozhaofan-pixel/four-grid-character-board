@@ -82,20 +82,21 @@ Use these files when configuring a GPT agent:
 
 ```text
 gpt-agent/instructions.md
-gpt-agent/01-master-front-full-body.md
-gpt-agent/02-front-portrait.md
-gpt-agent/03-three-quarter-portrait.md
-gpt-agent/04-back-full-outfit.md
-gpt-agent/05-validation-and-recovery.md
+gpt-agent/正面全身.md
+gpt-agent/正脸特写.md
+gpt-agent/侧脸特写.md
+gpt-agent/背面全身.md
+gpt-agent/验收.md
 ```
 
 Recommended setup:
 
 1. Paste `gpt-agent/instructions.md` into the GPT Instructions field.
-2. Upload the five numbered Markdown files as GPT knowledge files. Keep their filenames unchanged so `instructions.md` can route to one generation step at a time.
-3. Enable image generation and image upload / vision capabilities.
+2. Upload the five Chinese Markdown files as GPT knowledge references.
+3. Enable Image Generation and image upload / vision capabilities.
+4. Keep Code Interpreter & Data Analysis disabled for this GPT unless you separately need it. This workflow should return rendered images, not sandbox file paths.
 
-The Instructions file is a lightweight Chinese state router. Files `01` through `04` are self-contained prompts for the fixed generation sequence; file `05` is loaded only for validation, recovery, or final output.
+The Instructions file owns behavior, semantic routing, and direct image-generation calls. The five knowledge files contain only visual reference material, avoiding filename-based tool routing and text fallback behavior.
 
 ## License
 
