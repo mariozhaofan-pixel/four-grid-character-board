@@ -47,7 +47,7 @@ The GPT agent version uses this fixed four-image sequence. The Codex deployment 
 - Master and full-body views use vertical `9:16`; head close-ups use `1:1`.
 - Neutral gray studio background by default.
 - Switch to white studio background when the subject has gray-toned outfit, hair, accessories, or skin.
-- No text, labels, watermarks, logos, borders, model sheets, or 2x2 grid generation by default.
+- No text, labels, watermarks, logos, borders, model sheets, or 2x2 grid generation by default. The only text exception is the minimal height scale on the back full-body view.
 
 ## Codex Skill Deployment
 

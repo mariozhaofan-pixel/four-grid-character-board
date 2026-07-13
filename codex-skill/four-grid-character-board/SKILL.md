@@ -40,7 +40,7 @@ For the full production specification, read `references/production-rules.md` bef
 - Never rename, crop, upscale, or lightly retouch a user reference to impersonate a generated output.
 - Generate one image at a time.
 - Do not create a 2x2 grid unless the user is in a Codex/local workflow and explicitly expects final stitching.
-- Do not create character sheets, model sheets, turnaround sheets, labels, watermarks, borders, or text.
+- Do not create character sheets, model sheets, turnaround sheets, labels, watermarks, borders, or text, except for the minimal height scale required on the back full-body view.
 - The master image is a default single-generation anchor, not a repeated step. Regenerate it only when the user asks to modify, redo, replace, or adjust the master.
 - After regenerating the master, base all later views on the new master only.
 
@@ -63,7 +63,8 @@ Before final response, check:
 - Correct view and aspect ratio for each step.
 - Consistent identity, hairstyle, outfit, accessories, shoes, and proportions.
 - Background follows the gray/white conditional rule.
-- No text, logo, watermark, labels, borders, or multi-view sheet layout.
+- No text except the back full-body height label; no logo, watermark, other labels, borders, or multi-view sheet layout.
+- The back full-body view includes a minimal line-art height scale with a height label derived from user-provided information; other views do not.
 - If final stitching is performed, order is `1-2-4-3`: front portrait, three-quarter portrait, outfit detail, back full outfit.
 
 ## Final Response

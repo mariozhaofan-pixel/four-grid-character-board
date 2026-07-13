@@ -56,7 +56,7 @@
 - 尽量使用系统支持的最高画质。
 - 人物必须尽可能填满画面，在不裁掉关键部位的前提下减少背景留白。
 - 每张图只出现一位人物。
-- 不添加文字、水印、logo、标题、标签、编号、边框或装饰。
+- 除背面全身图的简约身高标尺外，不添加文字、水印、logo、标题、标签、编号、边框或装饰。
 
 画幅规则：
 
@@ -129,7 +129,7 @@ python image_gen.py generate \
 - 多视角排版图。
 
 注意：  
-以上禁止项适用于默认“真实真人电影质感角色板”。如果用户明确指定某种非真人风格，例如赛璐璐日漫风、上美水墨风、蒸汽朋克风、皮克斯/迪士尼风等，则可以切换到用户指定风格，但仍必须遵守单张生成、母图工作流、角色一致性、无文字水印、不生成四宫格的规则。
+以上禁止项适用于默认“真实真人电影质感角色板”。如果用户明确指定某种非真人风格，例如赛璐璐日漫风、上美水墨风、蒸汽朋克风、皮克斯/迪士尼风等，则可以切换到用户指定风格，但仍必须遵守单张生成、母图工作流、角色一致性、不生成四宫格，以及只有背面全身身高标尺可以包含文字的规则。
 
 ---
 
@@ -229,7 +229,7 @@ python image_gen.py generate \
 - 角色板任务仍然按母图工作流执行。
 - 每次仍然只生成一张独立图片。
 - 不生成四宫格。
-- 不添加文字、水印、logo、标签、编号、边框。
+- 除背面全身图的简约身高标尺外，不添加文字、水印、logo、标签、编号、边框。
 - 如果风格与真实真人电影质感冲突，以用户当前明确要求为准；未明确时默认保持真实真人电影质感。
 
 ---
@@ -456,12 +456,14 @@ image_03_back_full_outfit.png
 - 保持与母图同一服装和身体比例。
 - 人物尽可能占满画面，头顶和鞋底只保留少量安全边距，不要大面积背景留白。
 - 默认中性灰影棚背景；如果主体服装或肤色带灰色系，则改用白色影棚背景。
-- 不添加文字、边框、水印、logo。
+- 人物侧边添加简约线稿身高标尺：细竖线从鞋底水平对应至头顶，使用少量刻度和一个身高标签，不遮挡人物，不形成分栏或面板。
+- 用户明确提供身高时标注 `XXX cm`；未提供明确数值时，根据用户提供的年龄感、性别呈现、体型、身体比例和鞋履保守估计，并标注 `约 XXX cm`。无尺度参考图不能视为精确测量。
+- 除身高标尺外，不添加其他文字、边框、水印、logo。
 
 生成提示词必须包含：
 
 ```text
-same character and same outfit as master front full body image, back view full body, vertical 9:16 portrait composition, standing with back facing camera, head to shoes fully visible, minimal background margins, subject fills the frame as much as possible without cropping head or shoes, same hairstyle from the back, same outfit materials and accessories, realistic live-action cinematic photo, neutral gray studio background by default; use a clean white studio background if the outfit, hair, accessories, or skin tone contains gray tones, no text, no watermark, no logo, no border
+same character and same outfit as master front full body image, back view full body, vertical 9:16 portrait composition, standing with back facing camera, head to shoes fully visible, minimal background margins, subject fills the frame as much as possible without cropping head or shoes, same hairstyle from the back, same outfit materials and accessories, realistic live-action cinematic photo, neutral gray studio background by default; use a clean white studio background if the outfit, hair, accessories, or skin tone contains gray tones, add a minimal line-art height scale beside the character, one thin vertical measurement line aligned from sole level to the top of the head, sparse tick marks, one simple height label using the user's explicit height as "XXX cm" or a conservative inferred height as "约 XXX cm", unobtrusive and not covering the character, no other text, no watermark, no logo, no border
 ```
 
 ### 第 4 张：正面服装细节图
@@ -553,7 +555,7 @@ same outfit as master front full body image, front outfit detail, vertical 9:16 
 - 是否符合用户指定风格。
 - 默认任务下是否是真人电影质感。
 - 是否遵守背景规则：默认中性灰底；主体服装或肤色带灰色系时使用白底；除非用户明确指定其他背景。
-- 是否没有文字、水印、logo、边框。
+- 除背面全身图的身高标尺外，是否没有其他文字、水印、logo、边框。
 - 是否只有一位人物。
 - 是否没有生成四宫格或角色设定页。
 - 是否保留用户指定的发型、发色、服装、鞋袜、手套、道具。
@@ -562,6 +564,7 @@ same outfit as master front full body image, front outfit detail, vertical 9:16 
 - 头像特写是否为 1:1 方图。
 - 头像特写是否保留可见毛孔细纹、自然红润感、明暗变化、光影颗粒和灰尘噪点。
 - 母图、背面全身图和服装细节长图是否为竖屏 9:16。
+- 背面全身图是否带有简约线稿身高标尺，标尺是否从鞋底水平对应到头顶，是否只有少量刻度和一个身高标签，估计值是否使用“约”。
 - 是否在不裁掉关键部位的前提下尽可能减少背景留白。
 
 如果图片明显不符合要求，应主动说明问题并重新生成该单图。
